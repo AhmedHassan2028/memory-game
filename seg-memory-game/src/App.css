@@ -227,3 +227,54 @@
   width: 150px;
   box-shadow: 0 0 10px rgba(224, 23, 228, 0.3);
 }
+
+.submit-button {
+  background-color: #a855f7;
+  border-color: #a855f7;
+  color: white;
+}
+
+.submit-button:hover {
+  background-color: #9333ea;
+  border-color: #9333ea;
+}
+
+/* Chatgpt helped with the displaying of the grids and tile */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 80px);
+  gap: 10px;
+  justify-content: center;
+  margin-top: 30px;
+  margin-right: 25px;
+}
+
+.tile {
+  width: 80px;
+  height: 80px;
+  background: white;
+  border-radius: 10px;
+}
+
+.green {
+  background: #22c55e;
+}
+
+.blue {
+  background: #9f3bf6;
+  cursor: pointer;
+}
+
+.score {
+  text-align: center;
+  margin-top: 30px;
+  margin-right: 25px;
+}
+
+.red {
+  background: #cd1313;
+}
+
+.yellow {
+  background: #e4b910;
+}
