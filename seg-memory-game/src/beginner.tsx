@@ -83,6 +83,12 @@ function Beginner() {
         <span className='lightning'>⚡</span>
       </div>
 
+      <div className='info'>
+        <h5>
+          3 seconds to memorize and then re-create pattern
+        </h5>
+      </div>
+
       <div className='buttons'>
         <Button variant='success' onClick={startGame}>
           New Level

@@ -85,7 +85,7 @@ function Intermediate() {
 
       <div className='info'>
         <h4>
-          3 seconds to memorize and re-create pattern
+          3 seconds to memorize and then re-create pattern
         </h4>
       </div>
 
@@ -101,7 +101,7 @@ function Intermediate() {
           <div
             key={tile}
             onClick={() => handleTileClick(tile)}
-            className={`tile
+            className={`tile2
               ${showPattern && pattern.includes(tile) ? 'green' : ''}
               ${!showResults && selectedTiles.includes(tile) ? 'blue' : ''}
               ${showResults &&
