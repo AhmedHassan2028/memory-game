@@ -2,6 +2,8 @@ import { useState } from 'react'
 import Button from 'react-bootstrap/Button'
 import './App.css'
 import HomeButton from './components/home-button'
+import IntermediateButton from './components/intermediate-button'
+import AdvancedButton from './components/advanced-button'
 
 function Beginner() {
 
@@ -14,11 +16,13 @@ function Beginner() {
   const [showPattern, setShowPattern] = useState(false)
   const [selectedTiles, setSelectedTiles] = useState<number[]>([])
   const [score, setScore] = useState<number | null>(null)
+  const [showResults, setShowResults] = useState(false)
 
   function startGame() {
-    //Chatgpt helped with the generating new patterns part of this
+    //Chatgpt helped with the generating new patterns part of this function
     setSelectedTiles([])
     setScore(null)
+    setShowResults(false)
 
     const newPattern: number[] = []
 
@@ -66,9 +70,10 @@ function Beginner() {
       }
 
     })
-  
+
     //So we dont get negtive
     setScore(Math.max(0, correct - wrong))
+    setShowResults(true)
   }
 
   return (
@@ -92,7 +97,22 @@ function Beginner() {
             onClick={() => handleTileClick(tile)}
             className={`tile
               ${showPattern && pattern.includes(tile) ? 'green' : ''}
-              ${selectedTiles.includes(tile) ? 'blue' : ''}
+              ${!showResults && selectedTiles.includes(tile) ? 'blue' : ''}
+              ${showResults &&
+                selectedTiles.includes(tile) &&
+                pattern.includes(tile)
+                  ? 'green'
+                  : ''}
+              ${showResults &&
+                selectedTiles.includes(tile) &&
+                !pattern.includes(tile)
+                  ? 'red'
+                  : ''}
+              ${showResults &&
+                !selectedTiles.includes(tile) &&
+                pattern.includes(tile)
+                  ? 'yellow'
+                  : ''}
             `}
           />
         ))}
@@ -106,20 +126,27 @@ function Beginner() {
 
       <div className='buttons'>
         <HomeButton />
+        <IntermediateButton />
+        <AdvancedButton />
       </div>
-      
+
+
       <div className='score'>
         <h2>
           Score: {score} / {pattern.length}
         </h2>
       </div>
-      <div className='score'>
+
+      <div className='info'>
         <h2>
-          -1 point for each incorrect or forgotten tiles
+          -1 point for each incorrect tile
         </h2>
       </div>
-
-      
+      <div className='info'>
+        <h2>
+           Green for correct tiles, Yellow for forgotten tiles, Red for incorrect tiles
+        </h2>
+      </div>
     </>
   )
 }
