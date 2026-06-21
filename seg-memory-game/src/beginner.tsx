@@ -40,7 +40,7 @@ function Beginner() {
 
     setTimeout(() => {
       setShowPattern(false)
-    }, 2000)
+    }, 1000)
   }
 
   // Chatgpt helped on this function
@@ -85,7 +85,7 @@ function Beginner() {
 
       <div className='info'>
         <h5>
-          2 seconds to memorize and then re-create pattern
+          1 second to memorize and then re-create pattern
         </h5>
       </div>
 
