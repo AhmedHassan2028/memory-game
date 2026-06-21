@@ -40,7 +40,7 @@ function Advanced() {
 
     setTimeout(() => {
       setShowPattern(false)
-    }, 3000)
+    }, 2000)
   }
 
   // Chatgpt helped on this function
@@ -85,7 +85,7 @@ function Advanced() {
 
       <div className='info'>
         <h4>
-          3 seconds to memorize and then re-create pattern
+          2 seconds to memorize and then re-create pattern
         </h4>
       </div>
 

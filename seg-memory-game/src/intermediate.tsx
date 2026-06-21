@@ -40,7 +40,7 @@ function Intermediate() {
 
     setTimeout(() => {
       setShowPattern(false)
-    }, 3000)
+    }, 1500)
   }
 
   // Chatgpt helped on this function
@@ -85,7 +85,7 @@ function Intermediate() {
 
       <div className='info'>
         <h4>
-          3 seconds to memorize and then re-create pattern
+          1.5 seconds to memorize and then re-create pattern
         </h4>
       </div>
 
